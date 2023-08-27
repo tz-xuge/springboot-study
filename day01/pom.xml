@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- gavp属性 -->
+    <!--  不会改变  -->
+    <groupId>com.hebut</groupId>
+    <artifactId>day01</artifactId>
+    <!--  构建过程  部署 修改 版本号  -->
+    <version>1.0.0</version>
+    <!--  maven工程打包方式  jar（默认）  war（web）  pom（不打包）  -->
+    <packaging>pom</packaging>
+
+    <!-- 当有子工程时  都会在这里列出 -->
+    <modules>
+        <module>son</module>
+    </modules>
+
+    <!--  声明版本号  -->
+    <properties>
+        <!--      提取版本号 统一管理   使用${名字}引用  -->
+        <pack.version>4.11</pack.version>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!--  第三方依赖
+            依赖查询官网  https://mvnrepository.com/
+            插件  maven-search  使用 Tools -> maven-search
+     -->
+    <dependencies>
+
+        <dependency>
+            <!--    gav 三个属性是必须的   定位用        -->
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${pack.version}</version>
+            <!-- scope 作用范围  一般不写表示整个项目都可以用 -->
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>5.3.26</version>
+        </dependency>
+
+    </dependencies>
+
+</project>
